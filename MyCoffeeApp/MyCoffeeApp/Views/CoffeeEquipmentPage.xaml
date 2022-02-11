@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyCoffeeApp.Views.CoffeeEquipmentPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MyCoffeeApp.ViewModels"
+             x:Class="MyCoffeeApp.Views.CoffeeEquipmentPage"
+             x:DataType="viewmodels:CoffeeEquipmentViewModel"> <!--compiled bindings - increases performance and gives compile time checks-->
+
+    <ContentPage.BindingContext> <!-- get intellisense inside xaml-->
+        <viewmodels:CoffeeEquipmentViewModel/>
+    </ContentPage.BindingContext>
     
     <Grid RowDefinitions="*,Auto,Auto,*">
 
