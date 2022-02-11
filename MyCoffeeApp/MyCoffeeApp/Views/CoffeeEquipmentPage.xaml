@@ -5,7 +5,7 @@
     
     <Grid RowDefinitions="*,Auto,Auto,*">
 
-        <Label Text="{Binding CountDisplay}" />
+        <Entry Text="{Binding CountDisplay}" />
         
         <Label
             Grid.Row="1"
