@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,9 +10,11 @@ namespace MyCoffeeApp.Views
         public CoffeeEquipmentPage()
         {
             InitializeComponent();
+            IncreaseCount = new Command(OnIncrease);
             BindingContext = this; //subscribe to events on this object - whenever OnPropertyCHanged occurs, automatically update it
         }
 
+        public ICommand IncreaseCount { get; }
 
         int count = 0;
         string countDisplay = "Click me.";
@@ -30,7 +32,7 @@ namespace MyCoffeeApp.Views
             }
         }
 
-        private void ButtonCLick_Clicked(object sender, EventArgs e)
+        void OnIncrease()
         {
             count++;
             CountDisplay = $"You clicked {count} time(s).";

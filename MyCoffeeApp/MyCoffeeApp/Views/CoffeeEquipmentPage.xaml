@@ -5,8 +5,6 @@
     
     <Grid RowDefinitions="*,Auto,Auto,*">
 
-        <Entry Text="{Binding CountDisplay}" />
-        
         <Label
             Grid.Row="1"
             Text="{Binding CountDisplay}"
@@ -14,10 +12,9 @@
             HorizontalOptions="Center" />
 
         <Button
-            x:Name="ButtonCLick"
+            Command ="{Binding IncreaseCount}"
             Grid.Row="2"
-            Text="Click Me!" 
-            Clicked="ButtonCLick_Clicked"/>
+            Text="Click Me!" />
         
     </Grid>
 </ContentPage>
