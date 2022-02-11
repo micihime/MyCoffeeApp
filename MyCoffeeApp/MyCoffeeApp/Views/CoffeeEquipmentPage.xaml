@@ -5,10 +5,9 @@
     
     <Grid RowDefinitions="*,Auto,Auto,*">
         
-        <Label 
-            x:Name="LabelCount" 
+        <Label
             Grid.Row="1"
-            Text="Clicked: "
+            Text="{Binding CountDisplay}"
             FontSize="Large"
             HorizontalOptions="Center" />
 

@@ -10,16 +10,30 @@ namespace MyCoffeeApp.Views
         public CoffeeEquipmentPage()
         {
             InitializeComponent();
-            LabelCount.Text = "Hello from Code Behind!";
+            BindingContext = this; //subscribe to events on this object - whenever OnPropertyCHanged occurs, automatically update it
         }
 
 
         int count = 0;
+        string countDisplay = "Click me.";
+
+        public string CountDisplay
+        {
+            get => countDisplay;
+            set
+            {
+                if (value == countDisplay)
+                    return;
+
+                countDisplay = value;
+                OnPropertyChanged(); //could be also OnPropertyChanged("CountDisplay"); or OnPropertyChanged(nameof(CountDisplay));
+            }
+        }
 
         private void ButtonCLick_Clicked(object sender, EventArgs e)
         {
             count++;
-            LabelCount.Text = $"You clicked {count} time(s).";
+            CountDisplay = $"You clicked {count} time(s).";
         }
     }
 }
