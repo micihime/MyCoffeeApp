@@ -4,6 +4,8 @@
              x:Class="MyCoffeeApp.Views.CoffeeEquipmentPage">
     
     <Grid RowDefinitions="*,Auto,Auto,*">
+
+        <Label Text="{Binding CountDisplay}" />
         
         <Label
             Grid.Row="1"
