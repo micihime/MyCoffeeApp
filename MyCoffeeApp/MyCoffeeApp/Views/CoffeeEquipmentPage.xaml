@@ -11,6 +11,12 @@
             Text="Clicked: "
             FontSize="Large"
             HorizontalOptions="Center" />
-                
+
+        <Button
+            x:Name="ButtonCLick"
+            Grid.Row="2"
+            Text="Click Me!" 
+            Clicked="ButtonCLick_Clicked"/>
+        
     </Grid>
 </ContentPage>
