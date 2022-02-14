@@ -1,9 +1,10 @@
-﻿using System.Windows.Input;
-using Xamarin.Forms;
+﻿using MvvmHelpers;
+using MvvmHelpers.Commands;
+using System.Windows.Input;
 
 namespace MyCoffeeApp.ViewModels
 {
-    public class CoffeeEquipmentViewModel : BindableObject
+    public class CoffeeEquipmentViewModel : ObservableObject
     {
         public CoffeeEquipmentViewModel()
         {
@@ -18,14 +19,7 @@ namespace MyCoffeeApp.ViewModels
         public string CountDisplay
         {
             get => countDisplay;
-            set
-            {
-                if (value == countDisplay)
-                    return;
-
-                countDisplay = value;
-                OnPropertyChanged(); //could be also OnPropertyChanged("CountDisplay"); or OnPropertyChanged(nameof(CountDisplay));
-            }
+            set => SetProperty(ref countDisplay, value);
         }
 
         void OnIncrease()
