@@ -1,10 +1,9 @@
-﻿using MvvmHelpers;
-using MvvmHelpers.Commands;
+﻿using MvvmHelpers.Commands;
 using System.Windows.Input;
 
 namespace MyCoffeeApp.ViewModels
 {
-    public class CoffeeEquipmentViewModel : BaseViewModel
+    public class CoffeeEquipmentViewModel : ViewModelBase
     {
         public CoffeeEquipmentViewModel()
         {
