@@ -1,5 +1,6 @@
-﻿using MvvmHelpers.Commands;
-using System.Collections.ObjectModel;
+﻿using MvvmHelpers;
+using MvvmHelpers.Commands;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -7,13 +8,13 @@ namespace MyCoffeeApp.ViewModels
 {
     public class CoffeeEquipmentViewModel : ViewModelBase
     {
-        public ObservableCollection<string> Coffee { get; } //everytime item is added/removed/... xamarin.forms will get a notification, but you cannot add range - for every item added/removed/... there will be a notification - 100 changes means 100 notifications
+        public ObservableRangeCollection<string> Coffee { get; } //everytime item is added/removed/... xamarin.forms will get a notification, but you cannot add range - for every item added/removed/... there will be a notification and an update - 100 changes means 100 notifications and updates
 
         public CoffeeEquipmentViewModel()
         {
             IncreaseCount = new Command(OnIncrease);
             CallServerCommand = new AsyncCommand(CallServer); //without MVVM Helpers we would need to call it like: CallServerCommand = new Command(async => await CallServer()); - hack, not elegant, can swallow exceptions
-            Coffee = new ObservableCollection<string>();
+            Coffee = new ObservableRangeCollection<string>();
 
             Title = "Coffee Equipment";
         }
@@ -38,9 +39,8 @@ namespace MyCoffeeApp.ViewModels
 
         async Task CallServer()
         {
-            Coffee.Add("Yes Plz");
-            Coffee.Add("Tonx");
-            Coffee.Add("Blue Bottle");
+            var items = new List<string> { "Yes Plz", "Tonx", "Blue Bottle" };
+            Coffee.AddRange(items);
         }
     }
 }
