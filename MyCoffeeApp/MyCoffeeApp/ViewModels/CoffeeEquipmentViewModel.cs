@@ -4,11 +4,12 @@ using System.Windows.Input;
 
 namespace MyCoffeeApp.ViewModels
 {
-    public class CoffeeEquipmentViewModel : ObservableObject
+    public class CoffeeEquipmentViewModel : BaseViewModel
     {
         public CoffeeEquipmentViewModel()
         {
             IncreaseCount = new Command(OnIncrease);
+            Title = "Coffee Equipment";
         }
 
         public ICommand IncreaseCount { get; }
