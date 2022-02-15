@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:MyCoffeeApp.ViewModels"
+             xmlns:model="clr-namespace:MyCoffeeApp.Models"
              x:Class="MyCoffeeApp.Views.CoffeeEquipmentPage"
              x:DataType="viewmodels:CoffeeEquipmentViewModel"> <!--compiled bindings - increases performance and gives compile time checks-->
 
@@ -9,19 +10,12 @@
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView BackgroundColor="Transparent"> <!--has its own scrolling ability - DO NOT PUT INTO SCROLLVIEW-->
-        <ListView.ItemsSource>
-            <x:Array Type="{x:Type x:String}">
-                <x:String>Item 1</x:String>
-                <x:String>Item 2</x:String>
-                <x:String>Item 3</x:String>
-            </x:Array>
-        </ListView.ItemsSource>
+    <ListView BackgroundColor="Transparent" ItemsSource="{Binding Coffee}">
 
         <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding .}" 
-                          Detail="{Binding .}"/> <!--binding directly to items above-->
+            <DataTemplate x:DataType="model:Coffee">
+                <TextCell Text="{Binding Name}" 
+                          Detail="{Binding Roaster}"/> <!--binding directly to items above-->
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
