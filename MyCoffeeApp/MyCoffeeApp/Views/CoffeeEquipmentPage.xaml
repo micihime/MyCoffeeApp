@@ -9,18 +9,4 @@
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
     
-    <Grid RowDefinitions="*,Auto,Auto,*">
-
-        <Label
-            Grid.Row="1"
-            Text="{Binding CountDisplay}"
-            FontSize="Large"
-            HorizontalOptions="Center" />
-
-        <Button
-            Command ="{Binding IncreaseCount}"
-            Grid.Row="2"
-            Text="Click Me!" />
-        
-    </Grid>
 </ContentPage>
