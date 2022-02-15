@@ -14,8 +14,9 @@
 
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:Coffee">
-                <TextCell Text="{Binding Name}" 
-                          Detail="{Binding Roaster}"/> <!--binding directly to items above-->
+                <ImageCell Text="{Binding Name}" 
+                           Detail="{Binding Roaster}"
+                           ImageSource="{Binding Image}"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
