@@ -4,23 +4,38 @@
              xmlns:viewmodels="clr-namespace:MyCoffeeApp.ViewModels"
              xmlns:model="clr-namespace:MyCoffeeApp.Models"
              x:Class="MyCoffeeApp.Views.CoffeeEquipmentPage"
-             x:DataType="viewmodels:CoffeeEquipmentViewModel"> <!--compiled bindings - increases performance and gives compile time checks-->
+             x:DataType="viewmodels:CoffeeEquipmentViewModel">
+    <!--compiled bindings - increases performance and gives compile time checks-->
 
-    <ContentPage.BindingContext> <!-- get intellisense inside xaml-->
+    <ContentPage.BindingContext>
+        <!-- get intellisense inside xaml-->
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
 
     <ListView BackgroundColor="Transparent" 
               ItemsSource="{Binding Coffee}"
-              HasUnevenRows="True">
+              HasUnevenRows="True"
+              SeparatorColor="Red"
+              SeparatorVisibility="None">
 
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:Coffee">
                 <ViewCell>
                     <Grid Padding="10">
-                        <Label Text="{Binding Name}"
-                               FontSize="50"
-                               VerticalOptions="Center"/>
+                        <Frame CornerRadius="20"
+                               HasShadow="True">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Image}" WidthRequest="66"/>
+                                <StackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                            FontSize="Large"
+                                            VerticalOptions="Center"/>
+                                    <Label Text="{Binding Roaster}"
+                                            FontSize="Large"
+                                            VerticalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
                     </Grid>
                 </ViewCell>
             </DataTemplate>
