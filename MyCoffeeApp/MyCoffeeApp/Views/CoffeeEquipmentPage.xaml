@@ -17,5 +17,12 @@
                 <x:String>Item 3</x:String>
             </x:Array>
         </ListView.ItemsSource>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding .}" 
+                          Detail="{Binding .}"/> <!--binding directly to items above-->
+            </DataTemplate>
+        </ListView.ItemTemplate>
     </ListView>
 </ContentPage>
