@@ -8,5 +8,14 @@
     <ContentPage.BindingContext> <!-- get intellisense inside xaml-->
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
-    
+
+    <ListView BackgroundColor="Transparent"> <!--has its own scrolling ability - DO NOT PUT INTO SCROLLVIEW-->
+        <ListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+                <x:String>Item 3</x:String>
+            </x:Array>
+        </ListView.ItemsSource>
+    </ListView>
 </ContentPage>
