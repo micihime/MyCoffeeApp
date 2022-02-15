@@ -25,9 +25,26 @@ namespace MyCoffeeApp.ViewModels
             Coffee.Add(new Coffee { Roaster = "R1", Name = "C1", Image = image });
             Coffee.Add(new Coffee { Roaster = "R2", Name = "C2", Image = image });
             Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
+            Coffee.Add(new Coffee { Roaster = "R3", Name = "C3", Image = image });
 
             CoffeeGroups.Add(new Grouping<string, Coffee>("G1", Coffee.Take(2).ToList()));
-            CoffeeGroups.Add(new Grouping<string, Coffee>("G2", Coffee.Skip(2).Take(1).ToList()));
+            CoffeeGroups.Add(new Grouping<string, Coffee>("G2", Coffee.Skip(2).Take(10).ToList()));
 
             RefreshCommand = new AsyncCommand(Refresh); //without MVVM Helpers we would need to call it like: CallServerCommand = new Command(async => await CallServer()); - hack, not elegant, can swallow exceptions
         }
