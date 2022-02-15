@@ -32,22 +32,6 @@ namespace MyCoffeeApp.ViewModels
             RefreshCommand = new AsyncCommand(Refresh); //without MVVM Helpers we would need to call it like: CallServerCommand = new Command(async => await CallServer()); - hack, not elegant, can swallow exceptions
         }
 
-
-        int count = 0;
-        string countDisplay = "Click me.";
-
-        public string CountDisplay
-        {
-            get => countDisplay;
-            set => SetProperty(ref countDisplay, value);
-        }
-
-        void OnIncrease()
-        {
-            count++;
-            CountDisplay = $"You clicked {count} time(s).";
-        }
-
         async Task Refresh()
         {
             IsBusy = true;
