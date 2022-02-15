@@ -10,13 +10,19 @@
         <viewmodels:CoffeeEquipmentViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView BackgroundColor="Transparent" ItemsSource="{Binding Coffee}">
+    <ListView BackgroundColor="Transparent" 
+              ItemsSource="{Binding Coffee}"
+              HasUnevenRows="True">
 
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="model:Coffee">
-                <ImageCell Text="{Binding Name}" 
-                           Detail="{Binding Roaster}"
-                           ImageSource="{Binding Image}"/>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Label Text="{Binding Name}"
+                               FontSize="50"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
