@@ -40,5 +40,21 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
+
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Header"
+                       TextColor="Olive"
+                       BackgroundColor="Red"/>
+            </StackLayout>
+        </ListView.Header>
+
+        <ListView.Footer>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Footer"
+                       TextColor="Gray"
+                       BackgroundColor="Blue"/>
+            </StackLayout>
+        </ListView.Footer>
     </ListView>
 </ContentPage>
